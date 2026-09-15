@@ -26,7 +26,7 @@ public final class TimeExamples {
         System.out.println("Checks passed: " + checks);
     }
 
-    static boolean canAccess(Clock clock, Instant startsAt, Instant expiresAt) {
+    static boolean isWithinValidityWindow(Clock clock, Instant startsAt, Instant expiresAt) {
         Instant now = clock.instant();
         return !now.isBefore(startsAt) && now.isBefore(expiresAt);
     }
@@ -54,18 +54,21 @@ public final class TimeExamples {
     }
 
     private static void testAccessWindow() {
-        Instant start = Instant.parse("2027-03-01T00:00:00Z");
-        Instant end = Instant.parse("2027-04-01T00:00:00Z");
+        Instant start = Instant.parse("2027-02-28T16:00:00Z");
+        Instant end = Instant.parse("2027-03-31T16:00:00Z");
         check(!accessAt(start.minusNanos(1), start, end), "before start");
         check(accessAt(start, start, end), "inclusive start");
         check(accessAt(end.minusNanos(1), start, end), "before exclusive end");
         check(!accessAt(end, start, end), "exclusive end");
         check(!accessAt(end.plusNanos(1), start, end), "after end");
+        check(accessAt(end.minusMillis(1), start, end), "table: one millisecond before end");
+        check(!accessAt(end.plusMillis(1), start, end), "table: one millisecond after end");
+        check(!accessAt(start.minusMillis(1), start, end), "table: one millisecond before start");
         check(!accessAt(start, start, start), "empty interval has no valid instant");
     }
 
     private static boolean accessAt(Instant now, Instant start, Instant end) {
-        return canAccess(Clock.fixed(now, ZoneOffset.UTC), start, end);
+        return isWithinValidityWindow(Clock.fixed(now, ZoneOffset.UTC), start, end);
     }
 
     private static void testMonthlyAnchor() {

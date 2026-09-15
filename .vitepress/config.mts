@@ -12,7 +12,7 @@ export default defineConfig({
   title: '软件系统的隐藏复杂性',
   description: '从时间、状态、重试到并发与分布式系统。一本从真实业务场景出发，讨论软件工程语义、边界与失败的在线书稿。',
   cleanUrls: true,
-  srcExclude: ['README.md', 'WRITING.md', 'VOICE.md', 'ILLUSTRATIONS.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
+  srcExclude: ['README.md', 'WRITING.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
   rewrites: {
     'manuscript/:part/_index.md': ':part/index.md',
     'manuscript/:rest*': ':rest*',
@@ -50,6 +50,7 @@ export default defineConfig({
             if (source.startsWith('manuscript/') && pathname.endsWith('.md')) token.attrSet('href', toPageLink(source) + suffix)
             else if (source === 'SUMMARY.md') token.attrSet('href', '/contents' + suffix)
             else if (source === 'examples/ch01-time/README.md') token.attrSet('href', '/examples/ch01-time/' + suffix)
+            else if (source.startsWith('examples/') && pathname.endsWith('.md')) token.attrSet('href', '/' + source.slice(0, -3) + suffix)
             else if (source === 'examples/ch01-time/TimeExamples.java') {
               token.attrSet('href', '/examples/ch01-time/TimeExamples.java')
               token.attrSet('download', 'TimeExamples.java')
