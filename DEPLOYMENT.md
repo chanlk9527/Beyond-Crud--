@@ -40,6 +40,8 @@ npm run docs:preview
 
 正文网址省略 `manuscript/` 前缀，例如第一章为 `/part-01-values/01-time`。分部导读使用 `/part-01-values/`，目录使用 `/contents`。已有 Markdown 相对链接由主题配置中的构建规则转换。示例源码由 `prepare.mjs` 在开发或构建前复制到公共资源目录，无须维护第二份副本。
 
+多页章节保留章首页网址，主题页面位于同名目录，例如 `/part-01-values/01-time/01-boundaries`。`SUMMARY.md` 中章链接下缩进两格的页面会进入章节侧栏和连续阅读顺序。第一章原有 `#sec-1-*` 锚点由 `.vitepress/ch01-anchors.json` 映射到新页面，章首页组件负责兼容跳转。新增或调整锚点时应同步维护该映射。
+
 保留 VitePress 稳定版本，并将其 Vite 依赖固定到 6.4.3，以修复旧版开发服务器的已知安全问题；升级时同时验证构建、预览与中文搜索。
 
 ## 公司透明加密文件

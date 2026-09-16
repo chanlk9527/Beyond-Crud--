@@ -16,8 +16,16 @@ export function toPageLink(source: string): string {
   return '/' + source.replace(/^manuscript\//, '').replace(/\.md$/, '').replace(/\/_index$/, '/')
 }
 
+export type BookItem = { text: string; link: string; items?: BookItem[]; collapsed?: boolean }
+
+export function flattenItems(items: BookItem[]): BookItem[] {
+  return items.flatMap(({ text, link, items: children }) => [
+    { text, link }, ...flattenItems(children || [])
+  ])
+}
+
 export function readBook() {
-  const parts: { text: string; link: string; items: { text: string; link: string }[] }[] = []
+  const parts: { text: string; link: string; items: BookItem[] }[] = []
   let introduction: { text: string; link: string } | undefined
 
   for (const line of readText(resolve(projectRoot, 'SUMMARY.md')).split(/\r?\n/)) {
@@ -25,16 +33,22 @@ export function readBook() {
       parts.push({ text: line.slice(3), link: '', items: [] })
       continue
     }
-    const match = line.match(/^- \[([^\]]+)\]\(([^)]+\.md)\)$/)
+    const match = line.match(/^(  )?- \[([^\]]+)\]\(([^)]+\.md)\)$/)
     if (!match) continue
-    const [, label, source] = match
+    const [, indent, label, source] = match
     const fullPath = resolve(projectRoot, source)
     const withinRoot = relative(projectRoot, fullPath)
     if (withinRoot.startsWith('..' + sep) || !source.startsWith('manuscript/') || !existsSync(fullPath)) {
       throw new Error(`SUMMARY.md 中的书稿路径无效：${source}`)
     }
     const item = { text: label.replace(/`/g, ''), link: toPageLink(source) }
-    if (!parts.length) introduction = item
+    if (indent) {
+      const chapter = parts.at(-1)?.items.at(-1)
+      if (!chapter) throw new Error(`小节缺少所属章节：${line}`)
+      ;(chapter.items ||= []).push(item)
+      chapter.collapsed = true
+    }
+    else if (!parts.length) introduction = item
     else if (source.endsWith('/_index.md')) parts.at(-1)!.link = item.link
     else parts.at(-1)!.items.push(item)
   }

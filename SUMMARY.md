@@ -1,20 +1,20 @@
 # 全书目录
 
-- [引言：不就是增删改查吗？](manuscript/00-introduction.md)
+- [引言](manuscript/00-introduction.md)
 
 ## 第一部分：那些“看起来只是一个字段”的问题
 
 - [分部导读](manuscript/part-01-values/_index.md)
 - [第 1 章：时间不是一个 `datetime`](manuscript/part-01-values/01-time.md)
-  - [1.1 3 月 31 日到底还能不能用](manuscript/part-01-values/01-time.md#sec-1-1)
-  - [1.2 把最后一天变成一个边界](manuscript/part-01-values/01-time.md#sec-1-2)
-  - [1.3 用户去了纽约，服务器也搬家了](manuscript/part-01-values/01-time.md#sec-1-3)
-  - [1.4 到期了，清理任务还没跑](manuscript/part-01-values/01-time.md#sec-1-4)
-  - [1.5 七天、一个月，究竟有多长](manuscript/part-01-values/01-time.md#sec-1-5)
-  - [1.6 每天九点，下一次是哪一刻](manuscript/part-01-values/01-time.md#sec-1-6)
-  - [1.7 时间存对了，“现在”可靠吗](manuscript/part-01-values/01-time.md#sec-1-7)
-  - [1.8 换一个需求，自己设计一次](manuscript/part-01-values/01-time.md#sec-1-8)
-  - [1.9 本章回顾](manuscript/part-01-values/01-time.md#sec-1-9)
+  - [日期如何变成截止边界](manuscript/part-01-values/01-time/01-boundaries.md)
+  - [同一个瞬间，怎样穿过系统](manuscript/part-01-values/01-time/02-storage.md)
+  - [到期以后，系统到底该做什么](manuscript/part-01-values/01-time/03-expiration.md)
+  - [七天和一个月如何计算](manuscript/part-01-values/01-time/04-calendar.md)
+  - [“昨天”的数据到底有哪些](manuscript/part-01-values/01-time/05-business-day.md)
+  - [每天九点与未来预约](manuscript/part-01-values/01-time/06-schedules.md)
+  - [“现在”从哪里来](manuscript/part-01-values/01-time/07-clocks.md)
+  - [综合设计：跨时区课程](manuscript/part-01-values/01-time/08-course.md)
+  - [设计练习与本章回顾](manuscript/part-01-values/01-time/09-review.md)
 - [第 2 章：ID 不只是数据库主键](manuscript/part-01-values/02-identity.md)
 - [第 3 章：金额、精度与舍入](manuscript/part-01-values/03-money.md)
 - [第 4 章：字符串、编码与“长度”](manuscript/part-01-values/04-strings.md)

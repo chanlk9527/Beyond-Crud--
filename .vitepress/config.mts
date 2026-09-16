@@ -1,10 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { dirname, relative, resolve } from 'node:path'
-import { readBook, readText, projectRoot, toPageLink } from './book.mts'
+import { readBook, readText, projectRoot, toPageLink, flattenItems } from './book.mts'
 
 const book = readBook()
 const readingOrder = [book.introduction, ...book.parts.flatMap(part => [
-  { text: part.text, link: part.link }, ...part.items
+  { text: part.text, link: part.link }, ...flattenItems(part.items)
 ])]
 
 export default defineConfig({
@@ -93,10 +93,10 @@ export default defineConfig({
       }))
     ],
     book,
-    outline: { level: [2, 3], label: '本章目录' },
-    docFooter: { prev: '上一篇', next: '下一篇' },
+    outline: { level: [2, 3], label: '本页目录' },
+    docFooter: { prev: '上一节', next: '下一节' },
     sidebarMenuLabel: '全书目录',
-    outlineTitle: '本章目录',
+    outlineTitle: '本页目录',
     returnToTopLabel: '回到顶部',
     darkModeSwitchLabel: '阅读主题',
     lightModeSwitchTitle: '切换为浅色主题',
