@@ -35,7 +35,7 @@ const { theme } = useData()
         <a v-for="(part, index) in theme.book.parts" :key="part.link" class="part-row" :href="withBase(part.link)">
           <span class="part-number">{{ String(index + 1).padStart(2, '0') }}</span>
           <div class="part-copy"><h3>{{ part.text.replace(/^第.+?部分：/, '') }}</h3><p>{{ part.items.map((item: { text: string }) => item.text.replace(/^第 \d+ 章：/, '')).join(' / ') }}</p></div>
-          <span class="part-count">{{ part.items.length }} 章</span>
+          <span class="part-count">{{ part.items.filter((item: { text: string }) => /^第 \d+ 章：/.test(item.text)).length }} 章<span v-if="part.items.some((item: { text: string }) => item.text.startsWith('结语：'))"> + 结语</span></span>
           <span class="part-arrow" aria-hidden="true">→</span>
         </a>
       </div>

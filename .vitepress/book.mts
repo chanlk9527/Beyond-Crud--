@@ -12,7 +12,19 @@ export function readText(path: string): string {
   }
 }
 
+// Keep published URLs stable when manuscript files are renamed.
+export const pageAliases: Record<string, string> = {
+  'manuscript/part-01-values/01-time/03-time-model.md': 'part-01-values/01-time/time-model.md',
+  'manuscript/part-01-values/01-time/01-02-boundaries.md': 'part-01-values/01-time/01-boundaries.md',
+  'manuscript/part-01-values/01-time/07-storage.md': 'part-01-values/01-time/02-storage.md',
+  'manuscript/part-01-values/01-time/08-expiration.md': 'part-01-values/01-time/03-expiration.md',
+  'manuscript/part-01-values/01-time/09-clocks.md': 'part-01-values/01-time/07-clocks.md',
+  'manuscript/part-01-values/01-time/10-course.md': 'part-01-values/01-time/08-course.md',
+  'manuscript/part-01-values/01-time/11-review.md': 'part-01-values/01-time/09-review.md'
+}
+
 export function toPageLink(source: string): string {
+  source = pageAliases[source] || source
   return '/' + source.replace(/^manuscript\//, '').replace(/\.md$/, '').replace(/\/_index$/, '/')
 }
 

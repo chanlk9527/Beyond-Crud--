@@ -1,12 +1,11 @@
-# 第 8 章：版本
+---
+search: false
+prev: false
+next: false
+---
 
-> 核心命题：系统中的“同一个东西”可能同时存在多个版本。
+# 版本：按职责阅读
 
-## 本章任务
+版本的相关内容已分别纳入以下章节，避免将数据修订号与契约版本混为一谈。
 
-区分数据版本、API 版本、配置版本、文件版本、乐观锁 version 和 Schema version，为后文的并发与兼容性建立共同语言。
-
-## 开篇场景
-
-待写：从用户在两个浏览器标签页编辑同一份资料开始，说明“最新”必须相对于某个版本来判断。
-
+[乐观并发控制](../part-04-concurrency/15-optimistic-concurrency.md)、[API 兼容性](../part-06-evolution/22-api-compatibility.md)、[数据结构演进](../part-06-evolution/23-schema-evolution.md)与[配置、灰度与回退](../part-06-evolution/24-configuration-rollout.md)。文件版本与对象身份见[文件上传综合实践](../part-06-evolution/25-files.md)。

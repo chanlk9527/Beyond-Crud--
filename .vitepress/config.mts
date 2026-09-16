@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { dirname, relative, resolve } from 'node:path'
-import { readBook, readText, projectRoot, toPageLink, flattenItems } from './book.mts'
+import { readBook, readText, projectRoot, toPageLink, flattenItems, pageAliases } from './book.mts'
 
 const book = readBook()
 const readingOrder = [book.introduction, ...book.parts.flatMap(part => [
@@ -14,6 +14,7 @@ export default defineConfig({
   cleanUrls: true,
   srcExclude: ['README.md', 'WRITING.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
   rewrites: {
+    ...pageAliases,
     'manuscript/:part/_index.md': ':part/index.md',
     'manuscript/:rest*': ':rest*',
     'SUMMARY.md': 'contents.md',

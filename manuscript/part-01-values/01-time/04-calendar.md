@@ -10,7 +10,7 @@
 
 “七天会员”至少有三种合理解释：从生效起连续 168 小时；到店当天算第一天，覆盖七个当地日期；到七个日历日后的同一当地时刻。第一种从时间点加固定长度，第二种先求截止日期的日界，第三种先推进当地日期再解析。即使没有夏令时，如果会员在晚上十一点生效，前两种结果也可能相差 23 小时。
 
-因此，选择 `plusDays` 或 `plusHours` 之前，应先明确需要保持的量。Java 的 `Duration` 以秒和纳秒表达长度，其中一天固定按 24 小时处理；`Period` 表达年、月、日，参与日历计算。名称中都有“天”，并不意味着运算可以互换。[Java `Duration`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html)、[Java `Period`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Period.html)
+上一节区分了 `Duration` 与 `Period`，这里要把这种区别落实到“七天”的三种承诺上。选择 `plusDays` 或 `plusHours` 之前，应先明确需要保持的量。Java 的 `Duration` 将一天固定按 24 小时处理；日历中的一天则要结合日期和地区规则确定边界。[Java `Duration`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Duration.html)、[Java `Period`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/Period.html)
 
 <a id="sec-1-5-1"></a>
 
