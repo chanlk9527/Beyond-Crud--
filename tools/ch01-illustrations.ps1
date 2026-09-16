@@ -30,7 +30,7 @@ $taskBody
 
 # Only the eight diagrams added in the second illustration pass are generated here.
 # Run from any directory: pwsh -File tools/ch01-illustrations.ps1
-New-BookSvg '02-admission-cutoff' 310 '点击、受理与提交跨过截止时刻' '示例以服务端受理时刻为准。请求甲在截止前点击，但截止后到达服务端，拒绝；请求乙在截止前受理，截止后提交，沿用保存的受理资格。客户端点击不充当授权证据。横向不按比例。' @(
+New-BookSvg '02-admission-cutoff' 310 '点击、资格检查与提交跨过截止时刻' '示例以服务端资格检查时刻为准。请求甲截止后到达，检查时已过期；请求乙截止前检查通过，截止后提交成功，随后沿用保存的资格。保存失败不能返回受理成功。横向不按比例。' @(
     SvgText 390 34 '截止瞬间'
     '  <path class="guide" d="M 390 48 V 230"/>'
     SvgText 28 112 '请求甲' 'start'
@@ -40,12 +40,12 @@ New-BookSvg '02-admission-cutoff' 310 '点击、受理与提交跨过截止时�
     '  <circle cx="210" cy="105" r="5" fill="#222"/><circle cx="485" cy="105" r="5" fill="#222"/>'
     SvgBox 550 83 140 42 '拒绝受理'
     SvgText 28 207 '请求乙' 'start'
-    SvgText 265 171 '服务端受理'
+    SvgText 265 171 '资格检查通过'
     SvgText 485 171 '数据库提交'
     SvgArrow 'M 150 200 H 535'
     '  <circle cx="265" cy="200" r="5" fill="#222"/><circle cx="485" cy="200" r="5" fill="#222"/>'
     SvgBox 550 178 140 42 '继续完成'
-    SvgText 28 268 '甲：点击早、受理晚 → 拒绝；乙：受理早、提交晚 → 继续' 'start'
+    SvgText 28 268 '甲：截止后检查 → 拒绝；乙：截止前检查、提交成功 → 继续' 'start'
     SvgText 28 295 '虚线对齐截止边界；横向不按比例' 'start'
 )
 New-BookSvg '03-future-commitment' 315 '时区规则更新影响两种不同的日程承诺' '固定当地九点以本地输入为准，规则更新后重算执行时间点，当地九点保持，UTC可能改变。固定瞬间以确认的时间点为准，不随规则更新重算瞬间，UTC保持，当地显示可能改变。只是假设规则更新，不预测任何地区政策变化。' @(
