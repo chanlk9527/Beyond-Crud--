@@ -9,8 +9,8 @@ const { theme } = useData()
       <div class="book-intro">
         <p class="book-eyebrow">BEYOND CRUD <span>在线书稿</span></p>
         <h1 id="book-title">软件系统的<br><span>隐藏复杂性</span></h1>
-        <p class="book-subtitle">从时间、状态、重试到并发与分布式系统</p>
-        <p class="book-description">从一个字段、一次请求和一条状态变化出发，看看那些“理所当然”的假设，是怎样在真实系统里失效的。</p>
+        <p class="book-subtitle">从数据语义、代码设计到交互、运行与演进</p>
+        <p class="book-description">从一个字段、一段抽象和一次用户操作出发，理解软件中的隐藏假设，以及每种设计选择带来的责任与代价。</p>
         <div class="book-actions">
           <a class="book-primary" :href="withBase(theme.book.introduction.link)">开始阅读 <span aria-hidden="true">→</span></a>
           <a class="book-secondary" :href="withBase('/contents')">浏览全书目录 <span aria-hidden="true">↗</span></a>
@@ -21,7 +21,7 @@ const { theme } = useData()
         <div class="cover-top">软件工程 / 语义与边界</div>
         <div class="cover-title">软件系统的<br>隐藏复杂性</div>
         <div class="cover-rule"></div>
-        <div class="cover-topics"><span>时间 · 状态 · 重试</span><span>并发 · 分布式 · 演进</span></div>
+        <div class="cover-topics"><span>数据 · 抽象 · 交互</span><span>异步 · 协作 · 演进</span></div>
         <div class="cover-footer">BEYOND<br>CRUD<span>一个字段之后，<br>还有整个世界。</span></div>
       </div>
     </section>
@@ -29,7 +29,7 @@ const { theme } = useData()
     <section class="book-path" aria-labelledby="reading-path-title">
       <div class="section-heading">
         <div><p class="book-eyebrow">READING PATH</p><h2 id="reading-path-title">把条件一个个加回来</h2></div>
-        <p>先说清一个值，再看它如何变化。<br>沿着八个部分，逐步走进真实系统。</p>
+        <p>从值的含义，到代码的组织与运行。<br>沿着 {{ theme.book.parts.length }} 个部分，逐步展开设计中的取舍。</p>
       </div>
       <div class="part-list">
         <a v-for="(part, index) in theme.book.parts" :key="part.link" class="part-row" :href="withBase(part.link)">

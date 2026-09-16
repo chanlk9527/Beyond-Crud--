@@ -10,9 +10,9 @@ const readingOrder = [book.introduction, ...book.parts.flatMap(part => [
 export default defineConfig({
   lang: 'zh-CN',
   title: '软件系统的隐藏复杂性',
-  description: '从时间、状态、重试到并发与分布式系统。一本从真实业务场景出发，讨论软件工程语义、边界与失败的在线书稿。',
+  description: '从数据语义、代码设计到交互、运行与演进。一本讨论软件开发中的隐藏假设、机制与设计取舍的在线书稿。',
   cleanUrls: true,
-  srcExclude: ['README.md', 'WRITING.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
+  srcExclude: ['README.md', 'WRITING.md', 'BOOK-DESIGN.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
   rewrites: {
     ...pageAliases,
     'manuscript/:part/_index.md': ':part/index.md',
