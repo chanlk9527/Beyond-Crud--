@@ -17,12 +17,8 @@ const { theme } = useData()
         </div>
         <p class="book-status">持续写作中 · 从引言和第一章开始</p>
       </div>
-      <div class="book-cover" aria-hidden="true">
-        <div class="cover-top">软件工程 / 语义与边界</div>
-        <div class="cover-title">软件系统的<br>隐藏复杂性</div>
-        <div class="cover-rule"></div>
-        <div class="cover-topics"><span>数据 · 抽象 · 交互</span><span>异步 · 协作 · 演进</span></div>
-        <div class="cover-footer">BEYOND<br>CRUD<span>一个字段之后，<br>还有整个世界。</span></div>
+      <div class="book-cover" aria-label="《软件系统的隐藏复杂性》封面">
+        <img src="/software-hidden-complexity-cover.png" alt="《软件系统的隐藏复杂性》书籍封面：剖开的软件模块与贯穿其中的橙色路径" />
       </div>
     </section>
 
