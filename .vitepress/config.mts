@@ -12,7 +12,7 @@ export default defineConfig({
   title: '软件系统的隐藏复杂性',
   description: '从数据语义、代码设计到交互、运行与演进。一本讨论软件开发中的隐藏假设、机制与设计取舍的在线书稿。',
   cleanUrls: true,
-  srcExclude: ['README.md', 'WRITING.md', 'BOOK-DESIGN.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
+  srcExclude: ['README.md', 'WRITING.md', 'BOOK-DESIGN.md', 'VOICE.md', 'ILLUSTRATIONS.md', 'CH01-*.md', 'CH02-*.md', '骨架.md', 'DEPLOYMENT.md', 'tools/**'],
   rewrites: {
     ...pageAliases,
     'manuscript/:part/_index.md': ':part/index.md',

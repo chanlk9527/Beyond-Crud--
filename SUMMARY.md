@@ -17,6 +17,7 @@
   - [综合设计：跨时区课程](manuscript/part-01-values/01-time/10-course.md)
   - [设计练习与本章回顾](manuscript/part-01-values/01-time/11-review.md)
 - [第 2 章：ID 不只是数据库主键](manuscript/part-01-values/02-identity.md)
+  - [这个 ID 在识别什么？](manuscript/part-01-values/02-identity/01-identity.md)
 - [第 3 章：金额、精度与舍入](manuscript/part-01-values/03-money.md)
 - [第 4 章：字符串、编码与“长度”](manuscript/part-01-values/04-strings.md)
 - [第 5 章：Null、空值与默认值](manuscript/part-01-values/05-null.md)
