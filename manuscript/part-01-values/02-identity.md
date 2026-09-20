@@ -25,3 +25,9 @@
 阅读本章时，可以反复追问五件事：它识别的对象是什么？唯一性在哪个边界内成立？对象搬家后什么必须不变？这个值暴露后会带来什么承诺？事后如何把不同系统中的记录重新关联起来？
 
 [从“这个 ID 在识别什么”开始阅读 →](02-identity/01-identity.md)
+
+[继续阅读：唯一性与稳定性](02-identity/02-uniqueness-stability.md)
+
+[继续阅读：生成方式](02-identity/03-generation.md)
+
+[继续阅读：表示与暴露](02-identity/04-representation-exposure.md)
