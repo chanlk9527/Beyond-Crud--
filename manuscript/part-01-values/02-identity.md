@@ -31,3 +31,7 @@
 [继续阅读：生成方式](02-identity/03-generation.md)
 
 [继续阅读：表示与暴露](02-identity/04-representation-exposure.md)
+
+[继续阅读：迁移、合并与重建](02-identity/05-migration-merge-rebuild.md)
+
+[继续阅读：一次请求里不止一个 ID](02-identity/06-request-identifiers.md)

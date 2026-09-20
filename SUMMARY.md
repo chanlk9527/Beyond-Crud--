@@ -21,6 +21,8 @@
   - [唯一性与稳定性：身份在哪些变化中保持成立？](manuscript/part-01-values/02-identity/02-uniqueness-stability.md)
   - [生成方式：自增、随机与按时间排序各保护什么？](manuscript/part-01-values/02-identity/03-generation.md)
   - [表示与暴露：能引用不等于有权限](manuscript/part-01-values/02-identity/04-representation-exposure.md)
+  - [迁移、合并与重建：身份如何穿过变化？](manuscript/part-01-values/02-identity/05-migration-merge-rebuild.md)
+  - [一次请求里不止一个 ID](manuscript/part-01-values/02-identity/06-request-identifiers.md)
 - [第 3 章：金额、精度与舍入](manuscript/part-01-values/03-money.md)
 - [第 4 章：字符串、编码与“长度”](manuscript/part-01-values/04-strings.md)
 - [第 5 章：Null、空值与默认值](manuscript/part-01-values/05-null.md)
