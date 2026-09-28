@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="520" viewBox="0 0 820 520" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto">
+  <title id="title">Zone 规则计算 Offset 结果</title>
+  <desc id="desc">本地时间和 UTC 的换算需要一个具体时刻的 Offset。Offset 是结果，例如负七小时。ZoneId 是规则标识符，Zone 分为固定偏移规则和地区规则。固定偏移始终返回同一个 Offset，地区规则根据日期时间返回对应 Offset。</desc>
+  <style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif;font-size:18px;fill:#222}.box{fill:#fff;stroke:#222;stroke-width:2}.result{fill:#eef6ff;stroke:#245b8a;stroke-width:2}.rule{fill:#fffaf0;stroke:#9a6a00;stroke-width:2}.head{font-weight:700}.note{font-size:16px;fill:#555}.small{font-size:15px;fill:#555}.arrow{fill:none;stroke:#222;stroke-width:2;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L10 4.5L0 9" fill="#222"/></marker></defs>
+  <rect width="820" height="520" fill="#fff"/>
+
+  <text x="410" y="32" text-anchor="middle" class="head">Zone 提供规则，Offset 是某一时刻的结果</text>
+
+  <rect class="box" x="245" y="58" width="330" height="65" rx="8"/>
+  <text x="410" y="86" text-anchor="middle" class="head">本地时间 ↔ UTC</text>
+  <text x="410" y="110" text-anchor="middle" class="small">换算需要知道这一刻的 Offset</text>
+
+  <path class="arrow" d="M410 123V155"/>
+  <rect class="result" x="275" y="158" width="270" height="82" rx="8"/>
+  <text x="410" y="190" text-anchor="middle" class="head">Offset：换算结果</text>
+  <text x="410" y="220" text-anchor="middle">−07:00</text>
+  <text x="410" y="264" text-anchor="middle" class="note">“这一刻与 UTC 差多少？”</text>
+
+  <path class="arrow" d="M410 300V334"/>
+  <text x="410" y="324" text-anchor="middle" class="small">由 Zone 规则计算</text>
+  <path class="arrow" d="M410 334L205 374"/>
+  <path class="arrow" d="M410 334L615 374"/>
+
+  <rect class="rule" x="45" y="378" width="320" height="105" rx="8"/>
+  <text x="205" y="407" text-anchor="middle" class="head">固定偏移 Zone</text>
+  <text x="205" y="435" text-anchor="middle">UTC+08:00</text>
+  <text x="205" y="462" text-anchor="middle" class="small">始终返回 +08:00，不包含 DST 规则</text>
+
+  <rect class="rule" x="455" y="378" width="320" height="105" rx="8"/>
+  <text x="615" y="407" text-anchor="middle" class="head">地区 Zone</text>
+  <text x="615" y="435" text-anchor="middle">America/Los_Angeles</text>
+  <text x="615" y="462" text-anchor="middle" class="small">冬季 −08:00；夏季 −07:00</text>
+
+  <text x="410" y="508" text-anchor="middle" class="head">Offset 告诉你“现在差多少”，ZoneId 告诉你“什么时候该差多少”</text>
+</svg>

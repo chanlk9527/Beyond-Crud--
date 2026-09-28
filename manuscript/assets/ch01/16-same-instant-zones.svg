@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="390" viewBox="0 0 760 390" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto">
+  <title id="title">同一瞬间在不同时区的显示</title>
+  <desc id="desc">同一个 UTC 瞬间转换到上海、纽约和东京时，日期和钟点不同，但时间轴上的位置相同。</desc>
+  <style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif;font-size:18px;fill:#222}.box{fill:#fff;stroke:#222;stroke-width:2}.axis{stroke:#222;stroke-width:3}.tick{stroke:#222;stroke-width:2}.note{font-size:15px;fill:#555}.head{font-weight:700}</style>
+  <rect width="760" height="390" fill="#fff"/>
+  <text x="380" y="30" text-anchor="middle" class="head">一个瞬间，多个当地表示</text>
+  <text x="380" y="62" text-anchor="middle" class="note">同一条时间轴上的位置不变，变化的是日期、钟点和偏移量</text>
+  <line class="axis" x1="80" y1="116" x2="680" y2="116"/>
+  <circle cx="380" cy="116" r="7" fill="#222"/>
+  <text x="380" y="100" text-anchor="middle">2027-07-10T13:00:00Z</text>
+  <line class="tick" x1="170" y1="108" x2="170" y2="124"/><line class="tick" x1="380" y1="108" x2="380" y2="124"/><line class="tick" x1="590" y1="108" x2="590" y2="124"/>
+  <rect class="box" x="45" y="165" width="210" height="125" rx="8"/>
+  <text x="150" y="198" text-anchor="middle" class="head">上海</text>
+  <text x="150" y="235" text-anchor="middle">21:00（+08:00）</text>
+  <text x="150" y="263" text-anchor="middle" class="note">7 月 10 日</text>
+  <rect class="box" x="275" y="165" width="210" height="125" rx="8"/>
+  <text x="380" y="198" text-anchor="middle" class="head">纽约</text>
+  <text x="380" y="235" text-anchor="middle">09:00（−04:00）</text>
+  <text x="380" y="263" text-anchor="middle" class="note">7 月 10 日</text>
+  <rect class="box" x="505" y="165" width="210" height="125" rx="8"/>
+  <text x="610" y="198" text-anchor="middle" class="head">东京</text>
+  <text x="610" y="235" text-anchor="middle">22:00（+09:00）</text>
+  <text x="610" y="263" text-anchor="middle" class="note">7 月 10 日</text>
+  <text x="380" y="340" text-anchor="middle" class="note">显示时区可以改变；事件本身没有改期</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="410" viewBox="0 0 760 410" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto">
+  <title id="title">时区数据库版本影响未来日程</title>
+  <desc id="desc">同一个未来当地日期时间和地区时区，在旧版和新版规则下可能得到不同瞬间；已经发布的计划不应被静默改写。</desc>
+  <style>text{font-family:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif;font-size:18px;fill:#222}.card{fill:#fff;stroke:#222;stroke-width:2}.old{fill:#f4f4f4;stroke:#555;stroke-width:2}.new{fill:#eef6ff;stroke:#245b8a;stroke-width:2}.arrow{fill:none;stroke:#222;stroke-width:2;marker-end:url(#arrow)}.note{font-size:15px;fill:#555}.head{font-weight:700}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4L0 8" fill="#222"/></marker></defs>
+  <rect width="760" height="410" fill="#fff"/>
+  <text x="380" y="30" text-anchor="middle" class="head">未来当地时间依赖规则版本</text>
+  <rect class="card" x="215" y="58" width="330" height="62" rx="8"/>
+  <text x="380" y="96" text-anchor="middle">2028-03-26 09:00 + Europe/Paris</text>
+  <path class="arrow" d="M380 120V150"/>
+  <rect class="old" x="55" y="170" width="290" height="140" rx="8"/>
+  <text x="200" y="204" text-anchor="middle" class="head">旧版 tzdb</text>
+  <text x="200" y="242" text-anchor="middle">偏移 +01:00</text>
+  <text x="200" y="274" text-anchor="middle">08:00Z</text>
+  <text x="200" y="298" text-anchor="middle" class="note">发布时采用的结果</text>
+  <rect class="new" x="415" y="170" width="290" height="140" rx="8"/>
+  <text x="560" y="204" text-anchor="middle" class="head">新版 tzdb</text>
+  <text x="560" y="242" text-anchor="middle">偏移 +02:00</text>
+  <text x="560" y="274" text-anchor="middle">07:00Z</text>
+  <text x="560" y="298" text-anchor="middle" class="note">规则更新后的计算结果</text>
+  <text x="380" y="350" text-anchor="middle" class="note">已经发生的事件：保留瞬间；未来日程：明确决定是否重算</text>
+  <text x="380" y="378" text-anchor="middle" class="note">不能只保存一次计算出的偏移量来表达“当地时间”</text>
+</svg>
